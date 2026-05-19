@@ -739,12 +739,6 @@ body {
   margin: 0;
 }
 
-.catalog-sort-label {
-  font-size: 0.82rem;
-  color: #6f7a8c;
-  white-space: nowrap;
-}
-
 .catalog-sort-select {
   height: 34px;
   border: 1px solid #cfd8e8;
