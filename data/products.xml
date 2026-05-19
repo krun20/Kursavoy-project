@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <id>6</id>
+        <name>Bridgestone Turanza T001</name>
+        <category>tires</category>
+        <season>summer</season>
+        <brand>Bridgestone</brand>
+        <size>215/60 R16</size>
+        <price>220.00</price>
+        <rating>4</rating>
+        <reviews>41</reviews>
+        <image>tire3.jpg</image>
+        <stock>true</stock>
+        <sale>true</sale>
+    </product>
+    <product>
+        <id>10</id>
+        <name>Pirelli Cinturato P7</name>
+        <category>tires</category>
+        <season>summer</season>
+        <brand>Pirelli</brand>
+        <size>225/50 R17</size>
+        <price>260.00</price>
+        <rating>4</rating>
+        <reviews>38</reviews>
+        <image>tire7.jpg</image>
+        <stock>true</stock>
+        <sale>true</sale>
+    </product>
+    <product>
+        <id>3</id>
+        <name>BBS LM R19 9x19 ET35</name>
+        <category>wheels</category>
+        <season>all</season>
+        <brand>BBS</brand>
+        <size>R19</size>
+        <price>1200.00</price>
+        <rating>5</rating>
+        <reviews>28</reviews>
+        <image>wheel1.jpg</image>
+        <stock>true</stock>
+        <sale>false</sale>
+    </product>
+    <product>
+        <id>4</id>
+        <name>Enkei RPF1 R18 8x18 ET45</name>
+        <category>wheels</category>
+        <season>all</season>
+        <brand>Enkei</brand>
+        <size>R18</size>
+        <price>890.00</price>
+        <rating>5</rating>
+        <reviews>56</reviews>
+        <image>wheel2.jpg</image>
+        <stock>true</stock>
+        <sale>false</sale>
+    </product>
+    <product>
+        <id>11</id>
+        <name>Vossen CV3-R 20x10.5 ET25</name>
+        <category>wheels</category>
+        <season>all</season>
+        <brand>Vossen</brand>
+        <size>R20</size>
+        <price>2300.00</price>
+        <rating>5</rating>
+        <reviews>15</reviews>
+        <image>wheel4.jpg</image>
+        <stock>true</stock>
+        <sale>false</sale>
+    </product>
+    <product>
+        <id>8</id>
+        <name>Michelin Pilot Sport 4</name>
+        <category>tires</category>
+        <season>summer</season>
+        <brand>Michelin</brand>
+        <size>225/45 R18</size>
+        <price>320.00</price>
+        <rating>5</rating>
+        <reviews>89</reviews>
+        <image>tire5.jpg</image>
+        <stock>true</stock>
+        <sale>false</sale>
+    </product>
+</products>

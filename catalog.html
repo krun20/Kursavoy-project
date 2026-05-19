@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Каталог дисков и шин Primewheelsby. Широкий выбор, фильтры по брендам, размерам и сезонности.">
+    <title>Каталог - Primewheelsby</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- шапка сайта с логотипом, контактами и навигацией -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-area">
+                    <div class="logo">
+                        <img src="images/logo.svg" alt="Primewheelsby" class="logo-img">
+                        <span class="logo-text">Primewheelsby</span>
+                    </div>
+                    <div class="logo-subtitle">Диски и шины премиум качества</div>
+                </div>
+                <div class="header-contact">
+                    <div class="header-phone">
+                        <img src="images/phone.svg" alt="Телефон">
+                        <span>+375 (44) 745 2333</span>
+                    </div>
+                    <div class="header-hours">Пн–Пт: 9:00–20:00, Сб–Вс: 10:00–18:00</div>
+                </div>
+            </div>
+
+            <!-- главное меню навигации -->
+            <nav class="nav">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Главная</a></li>
+                    <li><a href="catalog.html" class="nav-link active">Каталог</a></li>
+                    <li><a href="index.html#services" class="nav-link">Услуги</a></li>
+                    <li><a href="index.html#about" class="nav-link">О нас</a></li>
+                    <li><a href="index.html#contacts" class="nav-link">Контакты</a></li>
+                </ul>
+                <!-- кнопка бургер-меню для мобильных устройств -->
+                <button class="burger-menu" id="burgerMenu" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- основной блок каталога -->
+        <section class="catalog">
+            <!-- hero-блок с заголовком и количеством товаров -->
+            <div class="catalog-hero">
+                <div class="container catalog-hero-inner">
+                    <h1 class="catalog-hero-title">Каталог товаров</h1>
+                    <p class="catalog-hero-subtitle">
+                        Найдено товаров: <span id="productCountHeader">0</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="container catalog-body">
+                <div class="catalog-layout">
+                    <!-- боковая панель с фильтрами -->
+                    <aside class="filters" id="filtersSidebar">
+                        <button class="filters-close" id="closeFilters" aria-label="Закрыть фильтры">
+                            ✕
+                        </button>
+
+                        <h2 class="filters-title">Фильтры</h2>
+
+                        <!-- фильтр по категории товара (диски/шины) -->
+                        <div class="filter-group">
+                            <h3 class="filter-group-title">Категория</h3>
+                            <select class="category-select" id="categorySelect">
+                                <option value="all">Все товары</option>
+                                <option value="wheels">Диски</option>
+                                <option value="tires">Шины</option>
+                            </select>
+                        </div>
+
+                        <!-- фильтр по диапазону цены -->
+                        <div class="filter-group">
+                            <h3 class="filter-group-title" id="priceGroupTitle">Цена: 0–3000 BYN</h3>
+                            <div class="price-inputs">
+                                <input type="number" id="priceMin" placeholder="От" min="0" value="0">
+                                <span>-</span>
+                                <input type="number" id="priceMax" placeholder="До" min="0" value="3000">
+                            </div>
+                        </div>
+
+                        <!-- фильтр по размеру (динамически заполняется) -->
+                        <div class="filter-group">
+                            <h3 class="filter-group-title">Размер</h3>
+                            <div class="filter-checkboxes" id="sizeFilters">
+                            </div>
+                        </div>
+
+                        <!-- фильтр по сезону (летние, зимние, всесезонные) -->
+                        <div class="filter-group">
+                            <h3 class="filter-group-title">Сезон</h3>
+                            <div class="filter-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="season" value="summer">
+                                    <span>Летние</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="season" value="winter">
+                                    <span>Зимние</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="season" value="all">
+                                    <span>Всесезонные</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- фильтр по бренду (динамически заполняется) -->
+                        <div class="filter-group">
+                            <h3 class="filter-group-title">Бренд</h3>
+                            <div class="filter-checkboxes" id="brandFilters">
+                            </div>
+                        </div>
+
+                        <!-- кнопка сброса всех фильтров -->
+                        <button class="btn btn-primary" id="resetFilters">Сбросить фильтры</button>
+                    </aside>
+
+                    <!-- основное содержимое каталога -->
+                    <div class="catalog-content">
+                        <!-- панель управления: количество показанных товаров и сортировка -->
+                        <div class="catalog-toolbar">
+                            <p class="catalog-shown">
+                                Показано <span id="productCountShown">0</span> товаров
+                            </p>
+
+                            <label class="catalog-sort">
+                                <select class="catalog-sort-select" id="catalogSort">
+                                    <option value="popular">По популярности</option>
+                                    <option value="price-asc">Сначала дешевле</option>
+                                    <option value="price-desc">Сначала дороже</option>
+                                    <option value="rating-desc">По рейтингу</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <!-- сетка карточек товаров -->
+                        <div class="products-catalog-grid" id="catalogProducts">
+                        </div>
+
+                        <!-- блок пагинации (постраничная навигация) -->
+                        <nav class="catalog-pagination" aria-label="Пагинация">
+                            <button class="page-item active" type="button">1</button>
+                            <button class="page-item" type="button">2</button>
+                            <button class="page-item" type="button">3</button>
+                            <span class="page-item dots">...</span>
+                            <button class="page-item" type="button">34</button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- футер -->
+    <footer class="footer footer-simple">
+        <div class="container">
+            <p class="footer-brand">Primewheelsby</p>
+            <p class="footer-desc">Профессиональный подбор дисков и шин для вашего автомобиля</p>
+            <p class="footer-copy">2026 Primewheelsby</p>
+        </div>
+    </footer>
+
+    <!-- модальное окно для формы бронирования  -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" aria-label="Закрыть">
+                ✕
+            </button>
+            <h2 class="modal-title">Заполните все поля!</h2>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <input type="text" class="form-input" name="lastName" placeholder="Фамилия" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-input" name="firstName" placeholder="Имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-input" name="middleName" placeholder="Отчество" required>
+                </div>
+                <!-- блок ввода телефона с флагом -->
+                <div class="form-group phone-group">
+                    <div class="phone-flag">
+                        <svg width="24" height="16" viewBox="0 0 24 16" fill="none">
+                            <rect width="24" height="5.33" fill="#D62718"/>
+                            <rect y="5.33" width="24" height="5.33" fill="#4AA657"/>
+                            <rect y="10.67" width="24" height="5.33" fill="white"/>
+                        </svg>
+                    </div>
+                    <input type="tel" class="form-input phone-input" name="phone" placeholder="+375 xx xxxxxxx" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-input" name="email" placeholder="E-mail" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">Готово!</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- модальное окно об успешной отправке -->
+    <div class="modal" id="successModal">
+        <div class="modal-overlay" id="successModalOverlay"></div>
+        <div class="modal-content modal-success">
+            <button class="modal-close" id="closeSuccessModal" aria-label="Закрыть">
+            </button>
+            <h2 class="modal-title">Мы скоро свяжемся с вами!</h2>
+        </div>
+    </div>
+    <script src="js/catalog.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
