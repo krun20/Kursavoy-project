@@ -925,10 +925,6 @@ body {
   max-height: none;
 }
 
-.catalog .filters-close {
-  display: none;
-}
-
 .catalog .filter-group-title {
   font-size: 1.05rem;
 }
@@ -1091,9 +1087,6 @@ body {
     width: 44px;
     height: 44px;
     font-size: 0.95rem;
-  }
-  .catalog .filters-close {
-    display: none;
   }
 }
 .popular-categories .container,

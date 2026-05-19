@@ -46,10 +46,7 @@ body {
 // картинки не растягиваются шире контейнера
 img { max-width: 100%; display: block; }
 
-// ссылки: убираем подчёркивание, добавляем плавный переход
 a { text-decoration: none; color: inherit; transition: $transition; }
-
-// кнопки: меняем курсор, убираем рамку и фон
 button { cursor: pointer; border: none; background: none; }
 
 // стили для всех кнопок сайта
@@ -1014,8 +1011,6 @@ body {
   max-height: none;
 }
 
-.catalog .filters-close { display: none; }
-
 .catalog .filter-group-title { font-size: 1.05rem; }
 .catalog .checkbox-label { font-size: .95rem; }
 
@@ -1160,12 +1155,10 @@ body {
 .catalog .catalog-pagination .page-item.active { color: #0b4fc6; }
 .catalog .catalog-pagination .page-item.dots { pointer-events: none; }
 
-// адаптация пагинации на мобильных
 @media (max-width: 768px) {
   .catalog .catalog-layout { grid-template-columns: 1fr; }
   .catalog .products-catalog-grid { grid-template-columns: 1fr; }
   .catalog .catalog-pagination .page-item { width: 44px; height: 44px; font-size: .95rem; }
-  .catalog .filters-close { display: none; }
 }
 
 // стили для главной страницы: категории и товары
